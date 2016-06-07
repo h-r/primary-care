@@ -1,0 +1,19 @@
+{
+  "name": "primary-care",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "3.0.6",
+    "mongodb": "2.1.7",
+    "easyrtc": "1.0.15",
+    "socket.io": "0.9.17"
+
+  },
+	"engines": {
+		"node": "0.10.45",
+		"npm":  "2.15.1"
+	}
+}

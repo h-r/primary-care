@@ -1,0 +1,89 @@
+/* ------------------
+ styling for the tables 
+   ------------------   */
+
+
+.gradient-style
+{
+	border-collapse: collapse;
+	text-align: center;
+}
+.gradient-style th
+{
+	background: #b9c9fe url('/img/table-images/gradhead.png') repeat-x;
+	border-bottom: 1px solid #fff;
+	color: #039;
+	text-align: center;
+}
+
+.gradient-style thead tr:first-child th:first-child {
+    border-radius: 0.6em 0 0 0;
+}
+
+.gradient-style thead tr:first-child th:last-child {
+    border-radius: 0 0.6em 0 0;
+}
+
+.gradient-style td
+{
+	border-bottom: 1px solid #fff;
+	color: #669;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #aabcfe;
+	border-left: 1px solid #aabcfe;
+	background: #e8edff url('/img/table-images/gradback.png') repeat-x;
+}
+
+.gradient-style td.casilla-verde
+{
+	background: #e8edff url('/img/table-images/gradback-verde.png') repeat-x;
+}
+
+.gradient-style td.casilla-roja
+{
+	background: #e8edff url('/img/table-images/gradback-rojo.png') repeat-x;
+}
+
+.gradient-style tbody tr td {
+	vertical-align: middle;
+}
+
+.gradient-style  tbody td:first-child {
+    border-left: 0;
+}
+
+.gradient-style  tbody td:last-child {
+    border-right: 0;
+}
+
+.gradient-style tbody tr:hover td
+{
+	background: #d0dafd url('/img/table-images/gradhover.png') repeat-x;
+	color: #339;
+}
+
+.gradient-style tbody tr:hover td.casilla-verde
+{
+	background: #d0dafd url('/img/table-images/gradhover-verde.png') repeat-x;
+	color: #339;
+}
+
+.gradient-style tbody tr:hover td.casilla-roja
+{
+	background: #d0dafd url('/img/table-images/gradhover-rojo.png') repeat-x;
+	color: #339;
+}
+
+.gradient-style  tbody tr:last-child td{
+    border-bottom: 0;
+}
+
+
+.gradient-style  tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 0.6em;
+}
+
+.gradient-style  tbody tr:last-child td:last-child {
+    border-radius: 0 0 0.6em 0;
+}
+
