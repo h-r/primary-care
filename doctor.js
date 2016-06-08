@@ -51,7 +51,8 @@ app.post('/doctor/my_count', function(req, res){
 		
 		var callback = function () {
 			if (datos_user.pass != '') {
-			res.cookie('pass',datos_user.pass);
+			var new_pass=base_datos.cifrar_password(datos_user.pass,datos_user.dni)
+			res.cookie('pass',new_pass);
 			};
 			res.cookie('mensaje','user_updated'); 
 			res.redirect('/doctor/my_count');

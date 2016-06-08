@@ -129,6 +129,15 @@ app.post('/admin/edit_user', function(req, res){
 					var callback_exito = function () {
 						res.cookie('mensaje','user_updated');
 						res.cookie('datos_usuario_nuevo',JSON.stringify(datos_user));
+						//comprobar si nos hemos editado a nosotros mismos
+						if (datos_user.dni == req.cookies.dni){
+						   if (datos_user.pass != "") { //hemos cambiado la contraseña
+							var cipher_pass=base_datos.cifrar_password(datos_user.pass,datos_user.dni);
+							res.cookie('pass',cipher_pass);
+						   }
+							
+						}
+						//-----------------
 						res.redirect('/admin/edit_user');
 					};
 

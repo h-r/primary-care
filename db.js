@@ -228,7 +228,8 @@ var editar_datos_propios = function(datos_user,callback){
 		user._id=u._id;
 		user.dni= u.dni;
 		user.name = u.name;
-		user.pass = ((datos_user.pass == "")? u.pass : datos_user.pass);
+		var cipher_pass=cifrar_password(datos_user.pass,datos_user.dni);
+		user.pass = ((datos_user.pass == "")? u.pass : cipher_pass);
 		user.patient = u.patient;
 		user.admin = u.admin;
 		user.doctor = u.doctor;
