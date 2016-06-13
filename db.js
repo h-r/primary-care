@@ -329,7 +329,6 @@ var insertar_cita = function(patient,doctor,sala,begin,end,
 				funccion_exito,funccion_fracaso){
 
 	//Comprobaciones
-
 	var hacer_comprobaciones = function (f_fracaso,f_exito){
 		comprobaciones.comprobar_paciente_existe(patient,f_fracaso,function (){
 			comprobaciones.comprobar_doctor_existe (doctor,f_fracaso,function (){
@@ -437,16 +436,29 @@ var hacer_comprobaciones = function (sala,f_fracaso,f_exito){
 
 
 var insertar_sala = function(nombre_sala,
-				funccion_exito){
+				funccion_exito,funccion_fracaso){
 
-	MongoClient.connect(url, function(err, db) {
-	assert.equal(null, err);
-	var sala={};
-	sala.name= nombre_sala;
-	db.collection('room').insert(sala);
-	db.close();
-	funccion_exito();
-	})
+	var f_exito = function (){
+		MongoClient.connect(url, function(err, db) {
+		assert.equal(null, err);
+		var sala={};
+		sala.name= nombre_sala;
+		db.collection('room').insert(sala);
+		db.close();
+		funccion_exito();
+		});
+	}
+
+	var collection = 'room';
+	var query1={"name" : nombre_sala};
+	comprobaciones.query_generica_busqueda(collection,query1,{},function(lista_citas){
+		if (lista_citas.length>0){ //ya existe
+			error="room_found";
+			funccion_fracaso(error);
+		} else {
+		f_exito();
+			}
+	});
 }
 
 //---------

@@ -7,7 +7,7 @@ var textos = {
 	'user_inserted': 'Usuario insertado',
 	'user_deleted': 'Usuario borrado',
 	"doctor_not_found": "El médico no existe", //para el médico de cabecera
-	"doctor_con_horarios" : "El doctor tiene horarios",
+	"doctor_con_horarios" : "El médico tiene horarios",
 	"usuario_con_citas" : "El usuario tiene citas",
 	"medico_con_pacientes" : "El médico tiene pacientes",
 	"more_one_result" : "Más de un resultado",
@@ -22,9 +22,10 @@ var textos = {
 	"parametros_incorrectos":"Parámetros incorrectos",
 	"usuario_sin_cita": "No tienes cita ahora", //para la sala de videoconferencia
 	"user_found" : "El usuario ya existe", //para insertar
+	"room_found" : "La sala ya existe", //para insertar
 	//--Mensajes Server cert
 	"datos_erroneos":"Datos Erróneos",
-	"usuario_no_valido": "Aunque te has autenticado con certificado no eres un usuario valido",
+	"usuario_no_valido": "Aunque te has autenticado con certificado no eres un usuario válido",
 	"no_certificado" : "No te has autenticado con certificado", 
 //----------Fin Mensajes----------------
 'app_title':'Primary Care',// Titulo de la aplicación (titulo de las paginas web)
@@ -35,7 +36,7 @@ var textos = {
 'submit': 'Enviar',
 'patient': 'Paciente',
 'admin': 'Administrador',
-'doctor': 'Doctor',
+'doctor': 'Médico',
 'planner': 'Planificador',
 'login': 'Entrar',
 'logout': 'Salir',
@@ -51,7 +52,7 @@ var textos = {
 'rooms': 'Salas',
 'room':'Sala',
 'schedule': 'Horario',
-'pedir_cita': 'Pedir_cita',
+'pedir_cita': 'Pedir cita',
 'conference_room' : 'Sala de videoconferencia',
 'begin':'Inicio',
 'end':'Fin',
@@ -63,8 +64,8 @@ var textos = {
 'afternoon':'Tarde',
 'vacio':'Vacío', //para la casilla del calendario en doctores
 'ocupado': 'Ocupado', //para la casilla del calendario en pacientes
-'certificado_admin' : 'Certificado Admin', //para la autenticación con certificados
-'certificado_doctor' : 'Certificado Doctor',
+'certificado_admin' : 'Certificado Administrador', //para la autenticación con certificados
+'certificado_doctor' : 'Certificado Médico',
 'certificado_patient' : 'Certificado Paciente',
 'certificado_planner' : 'Certificado Planificador',
 'find_user' : 'Buscar Usuarios',

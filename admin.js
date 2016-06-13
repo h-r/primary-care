@@ -202,7 +202,7 @@ switch (req.body.action) {
 	  	base_datos.borrar_sala (req.body.sala,f_exito_borrar,f_fracaso);
 	  	break;
 	  case "insertar":
-		base_datos.insertar_sala(req.body.sala,f_exito_insertar);
+		base_datos.insertar_sala(req.body.sala,f_exito_insertar,f_fracaso);
 	  	break;
 	  default:
 	   	res.redirect('/admin/rooms');

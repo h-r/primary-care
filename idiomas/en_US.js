@@ -6,10 +6,10 @@ var textos = {
 	'user_updated': 'user update',
 	'user_inserted': 'user inserted',
 	'user_deleted': 'user deleted',
-	"doctor_not_found": "doctor not found", //para el medico de cabecera
-	"doctor_con_horarios" : "doctor has schedules",
+	"doctor_not_found": "medical doctor not found", //para el medico de cabecera
+	"doctor_con_horarios" : "medical doctor has schedules",
 	"usuario_con_citas" : "user has meetings",
-	"medico_con_pacientes" : "doctor has patients",
+	"medico_con_pacientes" : "medical doctor has patients",
 	"more_one_result" : "more than one result",
 	"sala_con_horarios" : "room has schedules",
 	"sala_con_citas" : "room has meetings",
@@ -21,11 +21,12 @@ var textos = {
 	"sub-cita":"sub-meeting",
 	"parametros_incorrectos":"incorrect parameters",
 	"usuario_sin_cita": "You have not meeting now", //para la sala de videoconferencia
+	"user_found" : "User already exists", //para insertar
+	"room_found" : "Room already exists", //para insertar
 	//--Mensajes Server cert
 	"datos_erroneos":"Incorrect Data",
 	"usuario_no_valido": "Although you have authenticated certificate you're not a valid user",
 	"no_certificado" : "You have not authenticated certificate",
-	"user_found" : "User already exists", //para insertar
 //----------Fin Mensajes----------------
 'app_title':'Primary Care',// Titulo de la aplicación (titulo de las paginas web)
  'spanish': 'Spanish',
@@ -35,7 +36,7 @@ var textos = {
 'submit': 'Submit',
 'patient': 'Patient',
 'admin': 'Admin',
-'doctor': 'Doctor',
+'doctor': 'Medical Doctor',
 'planner': 'Planner',
 'login': 'Login',
 'logout': 'Logout',
@@ -64,7 +65,7 @@ var textos = {
 'vacio':'Empty', //para la casilla del calendario en doctores
 'ocupado': 'Full', //para la casilla del calendario en pacientes
 'certificado_admin' : 'Certificate Admin', //para la autenticacion con certificados
-'certificado_doctor' : 'Certificate Doctor',
+'certificado_doctor' : 'Certificate Medical Doctor',
 'certificado_patient' : 'Certificate Patient',
 'certificado_planner' : 'Certificate Planner',
 'find_user' : 'Find Users',

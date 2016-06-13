@@ -150,14 +150,14 @@ var comprobar_citas_horario = function (sala,begin,end,month,year,
 	f_begin=f_begin.toISOString();
 	f_end=f_end.toISOString();
 
-	var collection='meeting'
-	var query1={"sala":sala, "begin" : {$gte: f_begin} , "end" : {$lte: f_end} };
+	var collection='meeting';
+	var query1={"sala":sala, "begin" : {$gte: f_begin} , "end" : {$lte: f_end} }; //FALTA MEJORAR COMPROBACIÓN
 	query_generica_busqueda (collection,query1,{}, function(resultado){
 		//console.log(JSON.stringify(resultado));
 		if (resultado.length==0){
 			exito()
 
-		}else{
+		}else{  
 			var error="horario_con_citas";
 			fracaso(error);
 		}

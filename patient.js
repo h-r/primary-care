@@ -140,12 +140,13 @@ app.post('/patient/meetings/:day/:month/:year', function(req, res) {
 	var year = parseInt(req.params.year);
 	//--
 	var collection = 'schedule';
-	var query1={"doctor": doctor,"month":month.toString(),"year":year.toString()};
+	var query1={"doctor": doctor,"month":month.toString(),"year":year.toString(),"begin":{"$lte":hora_inicio},"end":{"$gte":hora_fin}};
 	base_datos.query_generica_busqueda(collection,query1,{},function(horario){
 	//---------
 	if (horario==[]){res.redirect('/patient/meetings/'+day.toString()+'/'+month.toString()+'/'+year.toString());}
 	else{
 	var sala=horario[0].room;
+	//console.log(JSON.stringify(horario));
 	};
 
 	var f_exito = function (){

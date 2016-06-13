@@ -23,6 +23,7 @@ var mensajes = {
 	"parametros_incorrectos":"Fracaso",
 	"usuario_sin_cita": "Fracaso", //para la sala de videoconferencia
 	"user_found" : "Fracaso", //para insertar usuarios
+	"room_found" : "Fracaso", //para insertar salas
 	//--Mensajes Server cert
 	"datos_erroneos":"Fracaso",
 	"usuario_no_valido": "Fracaso",

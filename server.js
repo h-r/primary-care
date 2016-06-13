@@ -49,6 +49,11 @@ app.use(function(req, res, next) {
     }
 });
 
+//----------
+app.use(function(req, res, next) {
+  res.status(404).redirect('/');
+});
+
 
 //-------------
 var webServer = https.createServer(options, app).listen(config.puerto_serv_https, function(){
