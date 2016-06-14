@@ -47,7 +47,7 @@ var cabecera_basica= function (req,res,texto_anterior,callback)	{ //sin login
 };
 
 var cuerpo_login = function (req,res,texto_anterior,callback)	{ //app.get ('/')
-	
+	var ip_servidor= req.ip;
 	texto='																\
 <div class="container">															\
  <div class="row">															\
@@ -95,13 +95,13 @@ var cuerpo_login = function (req,res,texto_anterior,callback)	{ //app.get ('/')
   </div> 																\
   <div class="col-xs-12 col-sm-3 col-md-2">												\
 		<div class="btn-group-vertical">											\
-		<a class="btn btn-primary" href="https://'+config.ip_servidor+":"+config.puerto_serv_cert.toString()+'/admin"> 		\
+		<a class="btn btn-primary" href="https://'+ip_servidor+":"+config.puerto_serv_cert.toString()+'/admin"> 		\
  			'+funciones.texto(req,res,"certificado_admin")+'</a>								\
-		<a class="btn btn-primary" href="https://'+config.ip_servidor+":"+config.puerto_serv_cert.toString()+'/patient">	\
+		<a class="btn btn-primary" href="https://'+ip_servidor+":"+config.puerto_serv_cert.toString()+'/patient">		\
  			'+funciones.texto(req,res,"certificado_patient")+'</a>								\
-		<a class="btn btn-primary" href="https://'+config.ip_servidor+":"+config.puerto_serv_cert.toString()+'/doctor"> 	\
+		<a class="btn btn-primary" href="https://'+ip_servidor+":"+config.puerto_serv_cert.toString()+'/doctor"> 		\
  			'+funciones.texto(req,res,"certificado_doctor")+'</a>								\
-		<a class="btn btn-primary" href="https://'+config.ip_servidor+":"+config.puerto_serv_cert.toString()+'/planner">	\
+		<a class="btn btn-primary" href="https://'+ip_servidor+":"+config.puerto_serv_cert.toString()+'/planner">		\
  			'+funciones.texto(req,res,"certificado_planner")+'</a>								\
 		</div>															\
   </div> 																\
@@ -127,7 +127,7 @@ var mensajes_y_pie_pagina = function (req,res,texto_anterior,callback)	{
 		texto=texto + '';
 		texto=texto + '<div class="modal fade" id="ventana1" role="dialog">						\
 	<div class="modal-dialog">												\
-		<div class="modal-content '+color+'">									\
+		<div class="modal-content '+color+'">										\
 			<div class="modal-header panel-heading"> <!-- Es necesario panel-heading para los colores  -->		\
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>	\
 				<h3 class="modal-title">'+funciones.texto(req,res,mensaje)+'</h3>				\

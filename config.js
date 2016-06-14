@@ -20,7 +20,6 @@ var duracion_consultas=20;
 //###############################################
 var url_bd = 'mongodb://localhost:27017/primarycare';
 
-var ip_servidor = '192.168.56.101';
 var puerto_serv_cert = 8002;
 var puerto_serv_http = 5000;
 var puerto_serv_https = 3004;
@@ -41,7 +40,6 @@ module.exports = {
 	afternoon_end : afternoon_end,
 	duracion_consultas : duracion_consultas,
 	url_bd : url_bd,
-	ip_servidor : ip_servidor,
 	puerto_serv_cert : puerto_serv_cert,
 	puerto_serv_http : puerto_serv_http,
 	puerto_serv_https : puerto_serv_https,

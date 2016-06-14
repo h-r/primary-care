@@ -27,6 +27,7 @@ appCert.get('/planner', function(req, res){
 });
 
 appCert.get('/', function(req, res){
+	var ip_servidor= req.ip;
 	if (req.client.authorized){
 		var dni="";
 		var rol= req.cookies.role;
@@ -44,26 +45,26 @@ appCert.get('/', function(req, res){
 
 	  if (dni === "" || dni === undefined || rol === undefined)
 		{ res.cookie('mensaje','datos_erroneos');
-		  res.redirect("https://" + config.ip_servidor+":"+config.puerto_serv_https.toString());
+		  res.redirect("https://" + ip_servidor+":"+config.puerto_serv_https.toString());
 		}
   		
 		var f_fracaso = function () {
 			res.cookie('mensaje','usuario_no_valido');
-			res.redirect("https://" + config.ip_servidor+":"+config.puerto_serv_https.toString());
+			res.redirect("https://" + ip_servidor+":"+config.puerto_serv_https.toString());
 			}
 
 		var f_exito = function (user) {
 			res.cookie('dni',user.dni);
 		 	res.cookie('pass',user.pass);
 			res.cookie('role',rol);
-			res.redirect("https://" + config.ip_servidor+":"+config.puerto_serv_https.toString());
+			res.redirect("https://" + ip_servidor+":"+config.puerto_serv_https.toString());
 		}
 
 		base_datos.buscar_usuario(dni,f_exito,f_fracaso);
 
 	} else {
 		res.cookie('mensaje','no_certificado');
-		res.redirect("https://" + config.ip_servidor+":"+config.puerto_serv_https.toString());
+		res.redirect("https://" + ip_servidor+":"+config.puerto_serv_https.toString());
 	}
 });
 
