@@ -1,5 +1,5 @@
-var base_datos = require('./db');
-var html = require('./html'); 
+var base_datos = require('./db/db');
+var html = require('./html/html'); 
 var funciones = require('./funciones'); 
 
 module.exports = function (app) {

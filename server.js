@@ -1,6 +1,6 @@
 var express = require('express');
 var funciones = require('./funciones');
-var base_datos = require('./db');
+var base_datos = require('./db/db');
 var config = require('./config');
 
 var net = require('net');
@@ -59,7 +59,6 @@ app.use(function(req, res, next) {
 var webServer = https.createServer(options, app).listen(config.puerto_serv_https, function(){
 console.log('Express server https listening on port ' + config.puerto_serv_https);
 });
-
 
 //var webServer = app.listen(config.puerto_serv_http);
 //console.log('Servidor express en puerto '+ config.puerto_serv_http);

@@ -1,7 +1,7 @@
-var base_datos = require('./db');
+var base_datos = require('./db/db');
 var funciones = require('./funciones'); 
 var mas_funciones = require('./mas_funciones'); 
-var html = require('./html');
+var html = require('./html/html');
 
 module.exports = function (app) {
 

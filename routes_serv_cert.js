@@ -1,5 +1,5 @@
-var base_datos = require('./db');
-var html = require('./html'); 
+var base_datos = require('./db/db');
+var html = require('./html/html'); 
 var funciones = require('./funciones'); 
 var config = require('./config');
 
@@ -31,6 +31,8 @@ appCert.get('/', function(req, res){
 	if (req.client.authorized){
 		var dni="";
 		var rol= req.cookies.role;
+		var ip= req.cookies.ip;
+		//console.log(ip);
 	
 		//------------
 		var cert = req.connection.getPeerCertificate();
@@ -45,26 +47,30 @@ appCert.get('/', function(req, res){
 
 	  if (dni === "" || dni === undefined || rol === undefined)
 		{ res.cookie('mensaje','datos_erroneos');
-		  res.redirect("https://" + ip_servidor+":"+config.puerto_serv_https.toString());
+		  //res.redirect("https://" + ip_servidor+":"+config.puerto_serv_https.toString());
+		res.send('<script> window.location.replace("https://"+location.hostname+":'+config.puerto_serv_https.toString()+'");</script>');
 		}
   		
 		var f_fracaso = function () {
 			res.cookie('mensaje','usuario_no_valido');
-			res.redirect("https://" + ip_servidor+":"+config.puerto_serv_https.toString());
+			//res.redirect("https://" + ip_servidor+":"+config.puerto_serv_https.toString());
+		  res.send('<script> window.location.replace("https://"+location.hostname+":'+config.puerto_serv_https.toString()+'");</script>');
 			}
 
 		var f_exito = function (user) {
 			res.cookie('dni',user.dni);
 		 	res.cookie('pass',user.pass);
 			res.cookie('role',rol);
-			res.redirect("https://" + ip_servidor+":"+config.puerto_serv_https.toString());
+			//res.redirect("https://" + ip_servidor+":"+config.puerto_serv_https.toString());
+		res.send('<script> window.location.replace("https://"+location.hostname+":'+config.puerto_serv_https.toString()+'");</script>');
 		}
 
 		base_datos.buscar_usuario(dni,f_exito,f_fracaso);
 
 	} else {
 		res.cookie('mensaje','no_certificado');
-		res.redirect("https://" + ip_servidor+":"+config.puerto_serv_https.toString());
+		//res.redirect("https://" + ip_servidor+":"+config.puerto_serv_https.toString());
+		res.send('<script> window.location.replace("https://"+location.hostname+":'+config.puerto_serv_https.toString()+'");</script>');
 	}
 });
 

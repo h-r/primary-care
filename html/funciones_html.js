@@ -1,4 +1,4 @@
-var base_datos = require('./../db');
+var base_datos = require('./../db/db');
 var funciones = require('./../funciones');
 
 //###############################################

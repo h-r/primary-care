@@ -1,4 +1,4 @@
-var base_datos = require('./db');
+var base_datos = require('./db/db');
 var es_ES= require('./idiomas/es_ES');
 var en_US= require('./idiomas/en_US');
 

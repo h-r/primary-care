@@ -1,6 +1,6 @@
-var base_datos = require('./db');
+var base_datos = require('./db/db');
 var funciones = require('./funciones'); 
-var html = require('./html');
+var html = require('./html/html');
 var config = require('./config');
 
 module.exports = function (app) {
